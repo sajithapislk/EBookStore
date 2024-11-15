@@ -74,3 +74,7 @@ C:\Users\Sajith Madhubashana\source\repos\EBookStore\EBookStore\obj\Debug\EBookS
 C:\Users\Sajith Madhubashana\source\repos\EBookStore\EBookStore\obj\Debug\EBookStore.csproj.CopyComplete
 C:\Users\Sajith Madhubashana\source\repos\EBookStore\EBookStore\obj\Debug\EBookStore.dll
 C:\Users\Sajith Madhubashana\source\repos\EBookStore\EBookStore\obj\Debug\EBookStore.pdb
+C:\Users\Sajith Madhubashana\source\repos\EBookStore\EBookStore\bin\EntityFramework.dll
+C:\Users\Sajith Madhubashana\source\repos\EBookStore\EBookStore\bin\EntityFramework.SqlServer.dll
+C:\Users\Sajith Madhubashana\source\repos\EBookStore\EBookStore\bin\EntityFramework.xml
+C:\Users\Sajith Madhubashana\source\repos\EBookStore\EBookStore\bin\EntityFramework.SqlServer.xml
