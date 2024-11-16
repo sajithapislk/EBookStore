@@ -78,3 +78,5 @@ C:\Users\Sajith Madhubashana\source\repos\EBookStore\EBookStore\bin\EntityFramew
 C:\Users\Sajith Madhubashana\source\repos\EBookStore\EBookStore\bin\EntityFramework.SqlServer.dll
 C:\Users\Sajith Madhubashana\source\repos\EBookStore\EBookStore\bin\EntityFramework.xml
 C:\Users\Sajith Madhubashana\source\repos\EBookStore\EBookStore\bin\EntityFramework.SqlServer.xml
+C:\Users\Sajith Madhubashana\source\repos\EBookStore\EBookStore\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Sajith Madhubashana\source\repos\EBookStore\EBookStore\bin\Microsoft.AspNet.Identity.Core.xml
