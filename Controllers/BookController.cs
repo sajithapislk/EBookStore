@@ -19,5 +19,15 @@ namespace EBookStore.Controllers
                 .ToList();
             return View(books);
         }
+        // GET: Details
+        public ActionResult Details(int id)
+        {
+            var book = db.Books.Find(id);
+            if (book == null)
+            {
+                return HttpNotFound();
+            }
+            return View(book);
+        }
     }
 }
