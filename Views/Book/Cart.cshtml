@@ -1,0 +1,35 @@
+﻿@model List<EBookStore.Models.CartItem>
+
+<h2>Your Shopping Cart</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Quantity</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            var book = item.Book; // Access the Book directly from the CartItem
+            <tr>
+                <td>@book.Title</td>
+                <td>
+                    @using (Html.BeginForm("UpdateCart", "Book", FormMethod.Post))
+                    {
+                        @Html.Hidden("id", item.BookId)
+                        <input type="number" name="quantity" value="@item.Quantity" min="1" />
+                        <button type="submit">Update</button>
+                    }
+                </td>
+                <td>
+                    @Html.ActionLink("Remove", "UpdateCart", new { id = item.BookId, quantity = 0 })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="@Url.Action("Checkout")">Checkout</a>

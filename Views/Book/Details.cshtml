@@ -10,4 +10,10 @@
     <p><strong>Description:</strong> @Model.Description</p>
 </div>
 
+@using (Html.BeginForm("AddToCart", "Book", FormMethod.Post))
+{
+    @Html.Hidden("id", Model.BookId)
+    <button type="submit">Add to Cart</button>
+}
+
 <a href="@Url.Action("Search", "Book")">Back to Search</a>
