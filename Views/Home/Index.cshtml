@@ -139,7 +139,7 @@
                             <p class="card-text" style="color: #8894a3;">James Cameroon</p>
                             <p class="font-weight-bold" style="color: #8894a3;">Rs. 500</p>
                         </div>
-                        @Html.ActionLink("View details", "ViewBookDetails", "Home", new { area = "" }, new { @class = "btn d-block w-100 text-light btn-primary rounded-5" })
+                        @Html.ActionLink("View details", "Details", "Book", new { id = book.BookId }, new { @class = "btn d-block w-100 text-light btn-primary rounded-5" })
                     </div>
                 </div>
             }
