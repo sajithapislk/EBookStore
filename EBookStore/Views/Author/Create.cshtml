@@ -1,0 +1,29 @@
+﻿@model EBookStore.Models.Author
+@{
+    ViewBag.Title = "Create Author";
+   Layout = "~/Views/Shared/_Admin_Dashboard_Layout.cshtml";
+}
+
+<h2>Create Author</h2>
+
+@using (Html.BeginForm("Create", "Author", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.FirstName)
+        @Html.TextBoxFor(model => model.FirstName, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.LastName)
+        @Html.TextBoxFor(model => model.LastName, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Image)
+        @Html.TextBoxFor(model => model.Image, new { @class = "form-control" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create</button>
+}
