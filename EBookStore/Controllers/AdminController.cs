@@ -27,20 +27,50 @@ namespace EBookStore.Controllers
                 return View();
             }
 
-            var customer = db.Customers.FirstOrDefault(c => c.Email == email);
-            if (customer != null)
+            var admin = db.Admins.FirstOrDefault(c => c.Email == email);
+            if (admin != null)
             {
                 var passwordHasher = new PasswordHasher();
-                var verificationResult = passwordHasher.VerifyHashedPassword(customer.Password, password);
+                var verificationResult = passwordHasher.VerifyHashedPassword(admin.Password, password);
 
                 if (verificationResult == PasswordVerificationResult.Success)
                 {
-                    Session["CustomerId"] = customer.CustomerId;
+                    Session["AdminId"] = admin.AdminId;
                     return RedirectToAction("Index", "Home");
                 }
             }
 
             ModelState.AddModelError("", "Invalid email or password.");
+            return View();
+        }
+        public ActionResult Dashboard()
+        {
+            // Total Books
+            ViewBag.TotalBooks = 1000;
+
+            // Total Customers
+            ViewBag.TotalCustomers = 1000;
+
+            // Total Publishers
+            ViewBag.TotalPublishers = 1000;
+
+            // Total Orders
+            ViewBag.TotalOrders = 1000;
+
+            // Total Payment
+            ViewBag.TotalPayments = 1000;
+
+            // Pending Orders
+            ViewBag.TotalPendingOrders = 1000;
+
+            // Pending Payments
+            ViewBag.TotalPendingPayments = 1000;
+
+            // Total Authors
+            ViewBag.TotalAuthors = 100;
+
+            ViewBag.TotalEarnings = 1000;
+
             return View();
         }
     }
