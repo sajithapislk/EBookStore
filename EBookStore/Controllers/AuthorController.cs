@@ -4,7 +4,6 @@ using System.Web.Mvc;
 
 namespace EBookStore.Controllers.Admin
 {
-    [RoutePrefix("Admin/Author")]
     public class AuthorController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

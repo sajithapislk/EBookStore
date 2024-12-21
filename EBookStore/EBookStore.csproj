@@ -132,7 +132,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
-    <Compile Include="Controllers\Admin\AuthorController.cs" />
+    <Compile Include="Controllers\AuthorController.cs" />
     <Compile Include="Controllers\BookController.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
@@ -220,6 +220,9 @@
     <Content Include="Views\Author\Create.cshtml" />
     <Content Include="Views\Author\Edit.cshtml" />
     <Content Include="Views\Author\Delete.cshtml" />
+    <Content Include="Views\Book\AdminIndex.cshtml" />
+    <Content Include="Views\Book\AdminCreate.cshtml" />
+    <Content Include="Views\Book\AdminDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

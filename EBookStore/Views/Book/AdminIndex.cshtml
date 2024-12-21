@@ -1,0 +1,39 @@
+﻿@model IEnumerable<EBookStore.Models.Book>
+
+@{
+    ViewBag.Title = "Books List";
+}
+
+<h2>Books List</h2>
+
+<p>
+    @Html.ActionLink("Create New Book", "Create")
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>ISBN</th>
+            <th>Price</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Title)</td>
+                <td>@Html.DisplayFor(modelItem => item.Author.FirstName)</td>
+                <td>@Html.DisplayFor(modelItem => item.ISBN)</td>
+                <td>@Html.DisplayFor(modelItem => item.Price)</td>
+                <td>
+                    @Html.ActionLink("Details", "Details", new { id = item.BookId }) |
+                    @Html.ActionLink("Edit", "Edit", new { id = item.BookId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.BookId })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
