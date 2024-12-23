@@ -59,7 +59,6 @@ namespace EBookStore.Controllers
             return View();
         }
 
-        // POST: Book/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult AdminCreate([Bind(Include = "BookId,AuthorId,Title,Image,ISBN,Price,Description")] Book book)
@@ -73,6 +72,76 @@ namespace EBookStore.Controllers
 
             ViewBag.AuthorId = new SelectList(db.Authors, "AuthorId", "FirstName", book.AuthorId);
             return View(book);
+        }
+
+        public ActionResult AdminEdit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            Book book = db.Books.Find(id);
+            if (book == null)
+            {
+                return HttpNotFound();
+            }
+
+            ViewBag.AuthorId = new SelectList(db.Authors, "AuthorId", "FirstName", book.AuthorId);
+            return View(book);
+        }
+
+        // POST: Book/Edit/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AdminEdit([Bind(Include = "BookId,AuthorId,Title,Image,ISBN,Price,Description")] Book book)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(book).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("AdminIndex");
+            }
+
+            ViewBag.AuthorId = new SelectList(db.Authors, "AuthorId", "FirstName", book.AuthorId);
+            return View(book);
+        }
+
+        // GET: Book/Delete/5
+        public ActionResult AdminDelete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            Book book = db.Books.Find(id);
+            if (book == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(book);
+        }
+
+        // POST: Book/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult AdminDeleteConfirmed(int id)
+        {
+            Book book = db.Books.Find(id);
+            db.Books.Remove(book);
+            db.SaveChanges();
+            return RedirectToAction("AdminIndex");
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
         }
     }
 }
