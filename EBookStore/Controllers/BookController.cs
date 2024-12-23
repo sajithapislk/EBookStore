@@ -143,5 +143,15 @@ namespace EBookStore.Controllers
             }
             base.Dispose(disposing);
         }
+
+        public ActionResult BookReport()
+        {
+            var books = db.Books.Include("Author").ToList();
+            return new Rotativa.ViewAsPdf("BookReport", books)
+            {
+                FileName = "BookReport.pdf"
+            };
+        }
+
     }
 }
