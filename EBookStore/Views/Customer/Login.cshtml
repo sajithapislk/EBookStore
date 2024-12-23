@@ -2,23 +2,29 @@
     ViewBag.Title = "Login";
 }
 
-<h2>Login</h2>
+<div style="display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #f7f7f7; font-family: Arial, sans-serif;">
+    <div style="background-color: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); width: 300px;">
+        <h2 style="text-align: center; color: #333;">Login</h2>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-
-    <div>
-        <label>Email</label>
-        <input type="text" name="email" />
-        @Html.ValidationMessage("email")
+            <div style="margin-bottom: 15px;">
+                <label for="email" style="display: block; margin-bottom: 5px; font-weight: bold;">Email</label>
+                <input type="text" id="email" name="email" placeholder="Enter your email"
+                       style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;" />
+                <span style="color: red; font-size: 12px;">@Html.ValidationMessage("email")</span>
+            </div>
+            <div style="margin-bottom: 15px;">
+                <label for="password" style="display: block; margin-bottom: 5px; font-weight: bold;">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password"
+                       style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;" />
+                <span style="color: red; font-size: 12px;">@Html.ValidationMessage("password")</span>
+            </div>
+            <div style="text-align: center;">
+                <input type="submit" value="Login"
+                       style="padding: 10px 20px; background-color: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;" />
+            </div>
+        }
     </div>
-    <div>
-        <label>Password</label>
-        <input type="password" name="password" />
-        @Html.ValidationMessage("password")
-    </div>
-    <div>
-        <input type="submit" value="Login" />
-    </div>
-}
+</div>

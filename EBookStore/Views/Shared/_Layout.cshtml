@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - Online BookStore</title>
 
     @* SweetAlert CDN *@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -15,7 +15,7 @@
 <body class="d-flex flex-column min-vh-100">
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark main-background-color py-4">
         <div class="container d-flex justify-content-between align-items-center">
-            @Html.ActionLink("E-Book", "Index", "Home", new { area = "" }, new { @class = "navbar-brand fs-3 font-weight-bold" })
+            @Html.ActionLink("Books", "Index", "Home", new { area = "" }, new { @class = "navbar-brand fs-3 font-weight-bold" })
 
             <ul class="navbar-nav">
                 <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
@@ -58,8 +58,8 @@
         @RenderBody()
     </div>
     <div class="container-fluid mt-auto">
-        <footer class="p-3 d-flex justify-content-center align-items-center" style="background-color: #0E223B;">
-            <p class="text-center fs-5 text-white font-weight-bold">&copy; @DateTime.Now.Year | E-Book</p>
+        <footer class="p-3 d-flex justify-content-center align-items-center" style="background-color: #212f3d;">
+            <p class="text-center fs-5 text-white font-weight-bold">&copy; @DateTime.Now.Year | Books</p>
         </footer>
     </div>
 
